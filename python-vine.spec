@@ -1,9 +1,10 @@
+# NOTE: for versions >= 5.0.0 (for python 3.6+) see python3-vine.spec
 #
 # Conditional build:
 %bcond_without	doc	# Sphinx documentation
 %bcond_without	tests	# unit tests
 %bcond_without	python2 # CPython 2.x module
-%bcond_without	python3 # CPython 3.x module
+%bcond_with	python3 # CPython 3.x module (built from python3-vine.spec)
 
 %define		module		vine
 %define		egg_name	vine
@@ -13,7 +14,7 @@ Summary(pl.UTF-8):	Obietnice dla Pythona
 Name:		python-%{module}
 # keep 1.x here for python2 support
 Version:	1.3.0
-Release:	1
+Release:	2
 License:	BSD
 Group:		Libraries/Python
 Source0:	https://files.pythonhosted.org/packages/source/v/vine/%{pypi_name}-%{version}.tar.gz
